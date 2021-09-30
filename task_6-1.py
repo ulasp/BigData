@@ -14,13 +14,14 @@
 from time import sleep
 
 class TrafficLight():
-    tr_color = ["Красный", "Жёлтый", "Зелёный"]
+
+    def __init__(self):
+        self.__color = ["красный", "жёлтый", "зелёный"]
 
     def running(self):
         i = 0
         while i < 3:
-            print(f'Светофор переключается \n '
-                  f'{TrafficLight.tr_color[i]}')
+            print(f'Светофор переключается: {TrafficLight.__color[i]} цвет')
             if i == 0:
                 sleep(7)
             elif i == 1:
@@ -28,7 +29,7 @@ class TrafficLight():
             elif i == 2:
                 sleep(3)
             i += 1
+        #print(f"Светофор переключается. Горит {self.color} цвет")
 
 TrafficLight = TrafficLight()
 TrafficLight.running()
-

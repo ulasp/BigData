@@ -12,14 +12,14 @@ length (длина), width (ширина). Значения данных атр�
 class Road():
 
     def __init__(self, length, width):
-        self.length = length
-        self.width = width
+        self._length = length
+        self._width = width
         self.weight_kv_m = 25
         self.thickness = 5
 
     def weight_asphalt(self):
-        weight_a = self.length * self.width * self.weight_kv_m * self.thickness
-        print(f'Масса асфальта для покрытия дорожного полотна длиной {self.length}м: {weight_a}т')
+        weight_a = self._length * self._width * self.weight_kv_m * self.thickness
+        print(f'Масса асфальта для покрытия дорожного полотна длиной {self._length}м: {weight_a}т')
 
 massa = Road(20, 5)
 massa.weight_asphalt()
